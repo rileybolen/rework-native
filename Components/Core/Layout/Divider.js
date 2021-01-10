@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Dimensions} from 'react-native';
-import {Fonts} from 'config'
 import {Theme} from 'rework-native'
 
 class Divider extends Component{
