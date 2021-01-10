@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Dimensions} from 'react-native';
-import {Paragraph, Theme} from 'rework'
+import {Paragraph, Theme} from 'rework-native'
 
 class Label extends Component{
 

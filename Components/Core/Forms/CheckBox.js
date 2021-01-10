@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Dimension, View, TouchableOpacity, Dimensions} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
-import {Paragraph, Theme} from 'rework'
+import {Paragraph, Theme} from 'rework-native'
 
 class CheckBox extends Component{
 

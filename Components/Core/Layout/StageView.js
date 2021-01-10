@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Dimensions, LayoutAnimation} from 'react-native';
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 class StageView extends Component{
 

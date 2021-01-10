@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, Dimensions, TouchableOpacity} from 'react-native';
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 class ButtonPrimary extends Component{
 

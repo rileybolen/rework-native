@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Dimensions} from 'react-native';
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 class Paragraph extends Component{
 

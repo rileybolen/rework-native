@@ -3,7 +3,7 @@ import {Platform, StyleSheet, View, Text, Dimensions, SafeAreaView, TouchableOpa
 import StaticSafeAreaInsets from 'react-native-static-safe-area-insets'
 import * as Animatable from 'react-native-animatable'
 import Draggable from 'react-native-draggable'
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 var safeHeight = StaticSafeAreaInsets.safeAreaInsetsTop
 

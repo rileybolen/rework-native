@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Dimensions, View, Image} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
 import RNPickerSelect from 'react-native-picker-select';
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 class Select extends Component{
 

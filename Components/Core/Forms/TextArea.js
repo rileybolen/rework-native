@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Dimensions, TextInput} from 'react-native';
-import {Theme} from 'rework'
+import {Theme} from 'rework-native'
 
 class TextArea extends Component{
 

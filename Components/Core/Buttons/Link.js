@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, Dimensions, TouchableOpacity} from 'react-native';
-import {Paragraph, Theme} from 'rework'
+import {Paragraph, Theme} from 'rework-native'
 
 class Link extends Component{
 
