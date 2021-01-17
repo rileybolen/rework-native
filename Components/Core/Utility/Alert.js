@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {Platform, StyleSheet, View, Text, Dimensions, SafeAreaView, TouchableOpacity} from 'react-native'
-import StaticSafeAreaInsets from 'react-native-static-safe-area-insets'
 import * as Animatable from 'react-native-animatable'
+import { initialWindowMetrics } from 'react-native-safe-area-context';
 import Draggable from 'react-native-draggable'
 import {Theme} from 'rework-native'
 
-var safeHeight = StaticSafeAreaInsets.safeAreaInsetsTop
+
 
 class Alert extends Component{
 
@@ -39,7 +39,7 @@ class Alert extends Component{
     render(){
         if(this.state.show){
             return(
-                <SafeAreaView style={styles.safeview}>
+                <SafeAreaView style={styles.safeview} ref={(ref) => {this.safeview = ref}}>
                     <View style={[styles.container, {width: this.state.width, height: this.state.height}]}>
                         <Animatable.View
                             style={[styles.animatable, {width: this.state.width, height: this.state.height}]}
@@ -94,6 +94,10 @@ class Alert extends Component{
         }
     }
 
+    animateAlert(){
+
+    }
+
     show(message, type){
         this.setState({
             message: message,
@@ -102,7 +106,7 @@ class Alert extends Component{
         },() => {
             this.animatable.animate({
                 0: {
-                    top: -(safeHeight + this.state.height),
+                    top: -(initialWindowMetrics.insets.top + this.state.height),
                 },
                 1: {
                     top: 0,
@@ -117,7 +121,7 @@ class Alert extends Component{
                 top: 0,
             },
             1: {
-                top: -(safeHeight + this.state.height),
+                top: -(initialWindowMetrics.insets.top + this.state.height),
             }
         }, 300)
         .then(() => this.setState({show: false}))
