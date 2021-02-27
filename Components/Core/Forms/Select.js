@@ -32,7 +32,7 @@ class Select extends Component{
                   label: "Select",
                   value: null
                 }}
-                style={styles}
+                style={Select.styles}
                 Icon={() => {
                   return (
                       <Svg width="80%" height="80%" viewBox="0 0 426.667 426.667" >
@@ -79,41 +79,41 @@ class Select extends Component{
         )
     }
 
-}
+    static styles = StyleSheet.create({
+        inputIOS: {
+            paddingHorizontal: Dimensions.get('window').width * 0.02,
+            paddingVertical: Dimensions.get('window').height * 0.015,
+            borderRadius: Dimensions.get('window').width * 0.01,
+            borderWidth: Dimensions.get('window').width * 0.003,
+            borderColor: Theme.colors.backgroundAccent,
+            fontFamily: Theme.fonts.Primary,
+            fontSize: Dimensions.get('window').width * 0.04,
+            fontWeight: '400',
+            color: Theme.colors.text,
+        },
+        inputAndroid: {
+            paddingHorizontal: Dimensions.get('window').width * 0.02,
+            paddingVertical: Dimensions.get('window').height * 0.015,
+            borderRadius: Dimensions.get('window').width * 0.01,
+            borderWidth: Dimensions.get('window').width * 0.003,
+            borderColor: Theme.colors.backgroundAccent,
+            fontFamily: Theme.fonts.Primary,
+            fontSize: Dimensions.get('window').width * 0.04,
+            fontWeight: '400',
+            color: Theme.colors.text,
+        },
+        placeholder: {
+            color: Theme.colors.text,
+        },
+        iconContainer: {
+            top: Dimensions.get('window').height * 0.022,
+            right: Dimensions.get('window').width * 0.015,
+            width: Dimensions.get('window').width * 0.04,
+            height: Dimensions.get('window').width * 0.04
+        },
+    })
 
-const styles = StyleSheet.create({
-    inputIOS: {
-        paddingHorizontal: Dimensions.get('window').width * 0.02,
-        paddingVertical: Dimensions.get('window').height * 0.015,
-        borderRadius: Dimensions.get('window').width * 0.01,
-        borderWidth: Dimensions.get('window').width * 0.003,
-        borderColor: Theme.colors.backgroundAccent,
-        fontFamily: Theme.fonts.Primary,
-        fontSize: Dimensions.get('window').width * 0.04,
-        fontWeight: '400',
-        color: Theme.colors.text,
-    },
-    inputAndroid: {
-        paddingHorizontal: Dimensions.get('window').width * 0.02,
-        paddingVertical: Dimensions.get('window').height * 0.015,
-        borderRadius: Dimensions.get('window').width * 0.01,
-        borderWidth: Dimensions.get('window').width * 0.003,
-        borderColor: Theme.colors.backgroundAccent,
-        fontFamily: Theme.fonts.Primary,
-        fontSize: Dimensions.get('window').width * 0.04,
-        fontWeight: '400',
-        color: Theme.colors.text,
-    },
-    placeholder: {
-        color: Theme.colors.text,
-    },
-    iconContainer: {
-        top: Dimensions.get('window').height * 0.022,
-        right: Dimensions.get('window').width * 0.015,
-        width: Dimensions.get('window').width * 0.04,
-        height: Dimensions.get('window').width * 0.04
-    },
-})
+}
 
 Select.defaultProps = {
 

@@ -23,6 +23,41 @@ class Alert extends Component{
         this.renderAlert = this.renderAlert.bind(this)
 
         this.hiding = false
+
+        if(this.props.bindRef){
+            console.log("bindRef")
+            this.props.bindRef(this)
+        }
+
+        this.Themes = {
+            info: {
+                alert: {
+                    borderColor: Theme.colors.background,
+                    backgroundColor: Theme.colors.background,
+                },
+                text: {
+                    color: Theme.colors.text,
+                }
+            },
+            success: {
+                alert: {
+                    borderColor: Theme.colors.background,
+                    backgroundColor: Theme.colors.background,
+                },
+                text: {
+                    color: Theme.colors.success,
+                }
+            },
+            error: {
+                alert: {
+                    borderColor: Theme.colors.background,
+                    backgroundColor: Theme.colors.background,
+                },
+                text: {
+                    color: Theme.colors.error,
+                }
+            },
+        }
     }
 
     static getDerivedStateFromProps(nextProps, prevState){
@@ -73,7 +108,7 @@ class Alert extends Component{
         return(
             <View style={[
                 styles.alert,
-                Themes[this.state.type].alert,
+                this.Themes[this.state.type].alert,
                 Theme.styles.alert,
                 {width: this.state.width * 0.95, height: this.state.height * 0.85},
                 Theme.styles.paddingVertical1,
@@ -82,7 +117,7 @@ class Alert extends Component{
                 Theme.styles.justifyCenter,
                 Theme.styles.alignCenter,
             ]}>
-                <Text style={[styles.message, Themes[this.state.type].text]}>{this.state.message}</Text>
+                <Text style={[styles.message, this.Themes[this.state.type].text]}>{this.state.message}</Text>
             </View>
         )
     }
@@ -132,35 +167,7 @@ class Alert extends Component{
 
 }
 
-const Themes = {
-    info: {
-        alert: {
-            borderColor: Theme.colors.background,
-            backgroundColor: Theme.colors.background,
-        },
-        text: {
-            color: Theme.colors.text,
-        }
-    },
-    success: {
-        alert: {
-            borderColor: Theme.colors.background,
-            backgroundColor: Theme.colors.background,
-        },
-        text: {
-            color: Theme.colors.success,
-        }
-    },
-    error: {
-        alert: {
-            borderColor: Theme.colors.background,
-            backgroundColor: Theme.colors.background,
-        },
-        text: {
-            color: Theme.colors.error,
-        }
-    },
-}
+
 
 const styles = StyleSheet.create({
     safeview: {

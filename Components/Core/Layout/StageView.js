@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Dimensions, LayoutAnimation} from 'react-native';
+import {Platform, StyleSheet, Text, Dimensions, LayoutAnimation} from 'react-native';
 import {Theme} from 'rework-native'
 
 class StageView extends Component{
@@ -14,7 +14,7 @@ class StageView extends Component{
 
     render(){
         if(this.props.children){
-            return this.props.children[this.state.stage]
+            return React.Children.toArray(this.props.children)[this.state.stage]
         }else return null
     }
 
@@ -25,6 +25,7 @@ class StageView extends Component{
             }else{
                 LayoutAnimation.configureNext(this.state.transition)
             }
+            this.props.onStageChange(this.state.stage + 1)
             this.setState({
                 stage: this.state.stage + 1
             })
@@ -38,6 +39,7 @@ class StageView extends Component{
             }else{
                 LayoutAnimation.configureNext(this.state.transition)
             }
+            this.props.onStageChange(this.state.stage - 1)
             this.setState({
                 stage: this.state.stage - 1
             })
@@ -50,6 +52,7 @@ class StageView extends Component{
         }else{
             LayoutAnimation.configureNext(this.state.transition)
         }
+        this.props.onStageChange(0)
         this.setState({
             stage: 0
         })
@@ -61,6 +64,7 @@ class StageView extends Component{
         }else{
             LayoutAnimation.configureNext(this.state.transition)
         }
+        this.props.onStageChange(this.props.children.length)
         this.setState({
             stage: this.props.children.length
         })
@@ -80,7 +84,8 @@ StageView.defaultProps = {
           type: LayoutAnimation.Types.easeIn,
           duration: 200,
         },
-    }
+    },
+    onStageChange: function(stage){}
 };
 
 export default StageView;

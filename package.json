@@ -1,6 +1,6 @@
 {
   "name": "rework-native",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A component and styling framework for React Native",
   "main": "index.js",
   "scripts": {

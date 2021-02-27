@@ -10,7 +10,7 @@ let colorPalettes = {
         background: '#ebebeb',
         backgroundAccent: '#e0e0e0',
         text: '#333333',
-        primaryButton: '#444444',
+        primaryButton: '#333333',
         secondaryButton: '#cfcfcf',
         activityIndicatorColor: '#dddddd',
         error: '#b55653',
@@ -18,7 +18,7 @@ let colorPalettes = {
     },
     dark: {
         background: '#333333',
-        backgroundAccent: '#555555',
+        backgroundAccent: '#444444',
         text: '#ebebeb',
         primaryButton: '#ebebeb',
         secondaryButton: '#666666',
